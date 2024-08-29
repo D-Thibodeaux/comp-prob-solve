@@ -1,3 +1,6 @@
 This is a test text file
 I am making this to test uploading files
-I have already uploaded a file, but i am uploading another one
+I have already uploaded a file, but I am uploading another one
+
+this is a second section
+it has been added because I wanted to add it 
