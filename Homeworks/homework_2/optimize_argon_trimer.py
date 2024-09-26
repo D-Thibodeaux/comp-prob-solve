@@ -42,24 +42,24 @@ def lennard_jones_trimer (parameters, epsilon=0.01, sigma=3.4):
 
 #find optimum coordinates
 optimum_values = minimize(fun=lennard_jones_trimer, x0=(4,3,3), method="Nelder-Mead", tol=1e-6)['x']
-print(optimum_values)
+print(f"optimum value of x2: {optimum_values[0]} Å\noptimum value of x3: {optimum_values[1]} Å\noptimum value of y3: {optimum_values[2]} Å\n")
 
 #build set of coordinates as numpy array
 pos_set = np.array([[0, 0, 0], [optimum_values[0], 0, 0], [optimum_values[1], optimum_values[2], 0]])
 
 #print out relevant information
-print("\nR12 = ", np.sqrt((pos_set[1]-pos_set[0]).dot((pos_set[1]-pos_set[0]))))
-print("R13 = ", np.sqrt((pos_set[2]-pos_set[0]).dot((pos_set[2]-pos_set[0]))))
-print("R23 = ", np.sqrt((pos_set[2]-pos_set[1]).dot((pos_set[2]-pos_set[1]))), '\n')
+print("\nR12 = ", np.sqrt((pos_set[1]-pos_set[0]).dot((pos_set[1]-pos_set[0]))), "Å")
+print("R13 = ", np.sqrt((pos_set[2]-pos_set[0]).dot((pos_set[2]-pos_set[0]))), "Å")
+print("R23 = ", np.sqrt((pos_set[2]-pos_set[1]).dot((pos_set[2]-pos_set[1]))), 'Å\n')
 
-print('θ123 = ', compute_bond_angle(pos_set[0], pos_set[1], pos_set[2]))
-print('θ231 = ', compute_bond_angle(pos_set[1], pos_set[2], pos_set[0]))
-print('θ312 = ', compute_bond_angle(pos_set[2], pos_set[0], pos_set[1]), '\n')
+print('θ123 = ', compute_bond_angle(pos_set[0], pos_set[1], pos_set[2]), "degrees")
+print('θ231 = ', compute_bond_angle(pos_set[1], pos_set[2], pos_set[0]), "degrees")
+print('θ312 = ', compute_bond_angle(pos_set[2], pos_set[0], pos_set[1]), 'degrees\n')
 
-print("The bond distances are all equal and all bond angles are 60 degrees. This means that the Argons are arranged in an equilateral triangle.")
+print("The bond distances are all equal and all bond angles are 60 degrees. This means that the argons are arranged in an equilateral triangle.")
 
 #make xyz file to show optimum structure
-file = open('trimer.xyz', 'wt')
+file = open('homework-2-1/trimer.xyz', 'wt')
 file.write(str(len(pos_set)) + "\n")
 file.write("Argon trimer file\n")
 for pos in pos_set:
