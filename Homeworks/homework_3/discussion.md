@@ -1,0 +1,1 @@
+Trouton's rule seems to apply based on this data set. The calculated slope is ~ 104 J/mol-k, which is close to the approximation from trouton's rule (~88 J/mol-K)
