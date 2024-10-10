@@ -1,1 +1,2 @@
-the work done by an isothermal process is greater (more negative in plot) than the work done by an adiabatic process for the same final volume. This is because there is also a change in internal energy with an adiabatic process. 
+the work done by an isothermal process is greater (more negative in plot) than the work done by an adiabatic process for the same final volume. 
+This is because there is also a change in internal energy with an adiabatic process. 
